@@ -43,7 +43,8 @@ li {
   display: block;
   line-height: 50px;
   font-weight: bold;
-  text-align: right;
+  text-align: left;
+  padding-left: 100px;
 }
 .chat-room-form__input {
   float: left;
