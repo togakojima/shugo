@@ -11,11 +11,11 @@
     </div>
     <div class='chat-room-form__field'>
     </div>
+
     <!-- <div class='chat-room-form__field'>
       <div class='chat-room-form__field--left'>
         <label class='chat-room-form__label' for='chat_room_チャットメンバー'>チャットメンバー</label>
       </div>
-
       <div class='chat-room-form__field--right'>
         <select name="room[user_ids][]">
           <option value="">チャットするユーザーを選択してください</option>
@@ -23,6 +23,7 @@
             <option value=<%= user.id %>><%= user.nickname %></option>
           <% end %>
         </select>
+        <input name="room[user_ids][]" type="hidden" value=<%= current_user.id %>>
       </div>
     </div>
     <div class='chat-room-form__field'>
@@ -33,7 +34,19 @@
         <%= f.label :password, :パスワード, class: 'chat-room-form__label'%>
       </div>
       <div class='chat-room-form__field--right'>
-        <%= f.text_field :password, class: 'chat__room_name chat-room-form__input', placeholder: 'パスワードを入力してください' %>
+        <%= f.password_field :password, class: 'chat__room_name chat-room-form__input', placeholder: 'パスワードを入力してください' %>
+      </div>
+    </div>
+
+    <div class='chat-room-form__field'>
+    </div>
+
+    <div class='chat-room-form__field'>
+      <div class='chat-room-form__field--left'>
+        <%= f.label :password_confirmation, :パスワード再入力, class: 'chat-room-form__label'%>
+      </div>
+      <div class='chat-room-form__field--right'>
+        <%= f.password_field :password_confirmation, class: 'chat__room_name chat-room-form__input', placeholder: 'パスワードを再入力してください' %>
       </div>
     </div>
 
