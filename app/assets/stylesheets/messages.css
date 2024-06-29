@@ -31,8 +31,9 @@
 }
 
 .btn {
-  margin-top: 20px;
+  height: 35px;
+  margin-top: 50px;
   color: #000000;
-  background-color: #ccc;
-  font-size: 14px;
+  font-size: 25px;
+  text-decoration: none;
 }
