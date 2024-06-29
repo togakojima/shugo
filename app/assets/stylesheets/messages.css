@@ -21,24 +21,52 @@
 .chat-header {
   height: 100px;
 }
+
 .messages {
   height: calc(100vh - 100px - 90px);
   background-color: #e0eaec;
   padding: 46px 40px 0;
   overflow: scroll;
 }
-.message {
-  margin: 10px 0 0 0;
+
+.message_me {
+  width: 50%;
+  margin: 15px 0;
+  background-color: #ffffff;
+  float: left;
+  clear: both;
+  border-radius: 20px;
 }
+
+.message_other {
+  width: 50%;
+  margin: 15px 0;
+  background-color: lightblue;
+  float: right;
+  clear: both;
+  border-radius: 20px;
+}
+
 .upper-message {
-  display: flex;
+  background-color: #8fcff5;
+  border-radius: 20px 20px 0 0;
 }
+
 .message-user {
   font-weight: 16px;
   color: #434a54;
+  margin-left: 20px;
 }
+.message-user_other {
+  font-weight: 16px;
+  color: #434a54;
+  text-align: right;
+  margin-right: 20px;
+}
+
 .message-date {
-  margin-left: 10px;
+  text-align: right;
+  margin-right: 20px;
   font-weight: 12px;
   color: #999;
 }
@@ -48,7 +76,7 @@
 .message-content {
   font-weight: 14px;
   color: #434a54;
-  margin-bottom: 40px;
+  margin: 10px 0 40px 10px;
 }
 
 .form {

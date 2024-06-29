@@ -1,15 +1,36 @@
-<div class="message">
-  <div class="upper-message">
-    <div class="message-user">
-      <%= message.user.nickname %>
+<% if current_user.id == message.user_id %>
+  <div class="message_me">
+    <div class="upper-message">
+      <div class="message-user">
+        <%= message.user.nickname %>
+      </div>
+      
     </div>
-    <div class="message-date">
-      <%= l message.created_at %>
+    <div class="lower-message">
+      <div class="message-content">
+        <%= message.content %>
+      </div>
+      <div class="message-date">
+        <%= l message.created_at %>
+      </div>
     </div>
   </div>
-  <div class="lower-message">
-    <div class="message-content">
-      <%= message.content %>
+<% elsif current_user.id != message.user_id %>
+  <div class="message_other">
+    <div class="upper-message">
+      <div class="message-user_other">
+        <%= message.user.nickname %>
+      </div>
+      
+    </div>
+    <div class="lower-message">
+      <div class="message-content">
+        <%= message.content %>
+      </div>
+      <div class="message-date">
+        <%= l message.created_at %>
+      </div>
     </div>
   </div>
-</div>
+<% end %>
+
