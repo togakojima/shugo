@@ -9,11 +9,12 @@
   </div>
 </div>
 
-<div class="messages">
+<div id="comments" class="messages">
   <%= render partial: 'message', collection: @messages %>
 </div>
 
-<%= form_with model: [@room, @message], html: {class: "form"}, local: true do |f|%>
+<%= form_with model: [@room, @message], html: {class: "form", id:"message-form"}, local: true do |f|%>
+  <div id="current-user" data-id="<%= current_user.id %>"></div>
   <div class="form-input">
     <%= f.text_field :content, class: 'form-message', placeholder: 'type a message' %>
     <label class="form-image">

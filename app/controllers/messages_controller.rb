@@ -11,7 +11,7 @@ class MessagesController < ApplicationController
     @message = @room.messages.new(message_params)
     @message.save
     if @message.save
-      redirect_to room_messages_path(@room)
+      MessageChannel.broadcast_to @room, { message: @message, user: @message.user }
     else
       @messages = @room.messages.includes(:user)
       render :index, status: :unprocessable_entity, alert: "Message could not be sent"

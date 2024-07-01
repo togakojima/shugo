@@ -1,42 +1,19 @@
-<% if current_user.id == message.user_id %>
-  <div class="message_me">
-    <div class="upper-message">
-      <div class="message-user">
-        <%= message.user.nickname %>
-      </div>
-      
-    </div>
-    <div class="lower-message">
-      <div class="message-content">
-        <%= message.content %>
-      </div>
-      <div class='message-images'>
-        <%= image_tag message.image.variant(resize: '400x400'), class: 'message-image' if message.image.attached? %>
-      </div>
-      <div class="message-date">
-        <%= l message.created_at %>
-      </div>
+<div class="message_<%= current_user.id == message.user_id ? 'me' : 'other' %>">
+  <div class="upper-message">
+    <div class="message-user<%= current_user.id == message.user_id ? '' : '_other' %>"">
+      <%= message.user.nickname %>
     </div>
   </div>
-<% elsif current_user.id != message.user_id %>
-  <div class="message_other">
-    <div class="upper-message">
-      <div class="message-user_other">
-        <%= message.user.nickname %>
-      </div>
-      
+  <div class="lower-message">
+    <div class="message-content">
+      <%= message.content %>
     </div>
-    <div class="lower-message">
-      <div class="message-content">
-        <%= message.content %>
-      </div>
-      <div class='message-images'>
-        <%= image_tag message.image.variant(resize: '400x400'), class: 'message-image' if message.image.attached? %>
-      </div>
-      <div class="message-date">
-        <%= l message.created_at %>
-      </div>
+    <div class='message-images'>
+      <%= image_tag message.image.variant(resize: '400x400'), class: 'message-image' if message.image.attached? %>
+    </div>
+    <div class="message-date">
+      <%= l message.created_at %>
     </div>
   </div>
-<% end %>
+</div>
 
