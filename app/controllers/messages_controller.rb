@@ -11,7 +11,10 @@ class MessagesController < ApplicationController
     @message = @room.messages.new(message_params)
     @message.save
     if @message.save
-      MessageChannel.broadcast_to @room, { message: @message, user: @message.user }
+      MessageChannel.broadcast_to @room, { 
+      message: @message, user: @message.user, 
+      current_user_id: current_user.id, 
+      image_url: @message.image.attached? ? url_for(@message.image) : nil}
     else
       @messages = @room.messages.includes(:user)
       render :index, status: :unprocessable_entity, alert: "Message could not be sent"

@@ -3,7 +3,7 @@
 }
 .side-bar {
   background-color: #f5dc8b;
-  width: 300px;
+  width: 18vw;
   height: 100vh;
 }
 
@@ -16,7 +16,7 @@
 }
 .chat {
   background-color: #f3e3c0;
-  width: calc(100vw - 300px);
+  width: 82vw;
 }
 .chat-header {
   height: 100px;
@@ -63,11 +63,14 @@
 }
 
 .message-user {
+  height: 20px;
+  font-size: 20px;
   font-weight: 16px;
   color: #434a54;
   margin-left: 20px;
 }
 .message-user_other {
+  font-size: 20px;
   font-weight: 16px;
   color: #434a54;
   text-align: right;
@@ -82,12 +85,13 @@
 }
 .lower-message {
   margin-top: 10px;
+  object-fit: cover;
 }
 .message-content {
   font-weight: 17px;
   font-size: 19px;
   color: #434a54;
-  margin: 10px 10px 30px 10px;
+  margin: 20px 20px 30px 20px;
 }
 
 .message-images {
@@ -98,6 +102,8 @@
 .message-image {
   margin-bottom: 10px;
   opacity: 85%;
+  max-width: 90%;
+  height: auto;
 }
 
 .form {
