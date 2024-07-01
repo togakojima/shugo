@@ -3,8 +3,13 @@
   <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: 'btn'%>
 </div>
 
+<div class='room-box'>
+  <div class='messages-room'>
+    <%= @room.roomname %>
+  </div>
+</div>
+
 <div class="messages">
-  <%= @room.roomname %>
   <%= render partial: 'message', collection: @messages %>
 </div>
 
