@@ -1,0 +1,10 @@
+<div class='wrapper'>
+  <div class='side-bar'>
+    <%= render "messages/side_bar" %>
+  </div>
+  <div class="chat-header">
+  <%= link_to "マイページ", user_path(current_user), class: 'btn' %>
+  <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: 'btn'%>
+  </div>
+
+</div>

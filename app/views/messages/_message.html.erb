@@ -1,0 +1,19 @@
+<div class="message_<%= current_user.id == message.user_id ? 'me' : 'other' %>">
+  <div class="upper-message">
+    <div class="message-user<%= current_user.id == message.user_id ? '' : '_other' %>"">
+      <%= message.user.nickname %>
+    </div>
+  </div>
+  <div class="lower-message">
+    <div class="message-content">
+      <%= message.content %>
+    </div>
+    <div class='message-images'>
+      <%= image_tag message.image, class: 'message-image' if message.image.attached? %>
+    </div>
+    <div class="message-date">
+      <%= l message.created_at %>
+    </div>
+  </div>
+</div>
+

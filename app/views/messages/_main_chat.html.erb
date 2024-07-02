@@ -1,0 +1,26 @@
+<div class="chat-header">
+  <%= link_to "マイページ", user_path(current_user), class: 'btn' %>
+  <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: 'btn'%>
+</div>
+
+<div class='room-box'>
+  <div class='messages-room'>
+    <%= @room.roomname %>
+  </div>
+</div>
+
+<div id="comments" class="messages">
+  <%= render partial: 'message', collection: @messages %>
+</div>
+
+<%= form_with model: [@room, @message], html: {class: "form", id:"message-form"}, local: true do |f|%>
+  <div id="current-user" data-id="<%= current_user.id %>"></div>
+  <div class="form-input">
+    <%= f.text_field :content, class: 'form-message', placeholder: 'type a message' %>
+    <label class="form-image">
+      <span class="image-file">画像</span>
+      <%= f.file_field :image, class: 'hidden' %>
+    </label>
+  </div>
+  <%= f.submit '送信', class: 'form-submit' %>
+<% end %>
