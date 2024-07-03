@@ -1,6 +1,6 @@
-<div class="message_<%= current_user.id == message.user_id ? 'me' : 'other' %>">
+<div class="message_me">
   <div class="upper-message">
-    <div class="message-user<%= current_user.id == message.user_id ? '' : '_other' %>"">
+    <div class="message-user">
       <%= message.user.nickname %>
     </div>
   </div>

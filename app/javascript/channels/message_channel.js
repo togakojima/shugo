@@ -33,9 +33,9 @@ if(location.pathname.match(/\/rooms\/\d/)){
       console.log('isCurrentUser:', isCurrentUser);
 
       const html = `
-        <div class="message_${isCurrentUser ? 'me' : 'other'}">
+        <div class="message_me">
           <div class="upper-message">
-            <div class="message-user${isCurrentUser ? '' : '_other'}">
+            <div class="message-user">
               ${ data.user.nickname }
             </div>
           </div>
@@ -49,9 +49,10 @@ if(location.pathname.match(/\/rooms\/\d/)){
             </div>
           </div>
         </div>`;
+      
+      document.querySelector('#comments').innerHTML += html;
 
       const messages = document.getElementById("comments")
-      messages.insertAdjacentHTML('beforeend', html)
       const messageForm = document.getElementById("message-form")
       messageForm.reset();
       messages.scrollTop = messages.scrollHeight;

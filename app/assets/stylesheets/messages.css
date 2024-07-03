@@ -40,7 +40,7 @@
 }
 
 .message_me {
-  width: 50%;
+  width: 400px;
   margin: 15px 0;
   background-color: lightblue;
   float: left;
@@ -49,7 +49,7 @@
 }
 
 .message_other {
-  width: 50%;
+  width: 20%;
   margin: 15px 0;
   background-color: #ffffff;
   float: right;
