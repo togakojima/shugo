@@ -5,5 +5,5 @@ const scroll = () => {
   }
 };
 
-document.addEventListener("turbo:load", scroll);
+window.addEventListener("turbo:load", scroll);
 window.addEventListener("turbo:render", scroll);
